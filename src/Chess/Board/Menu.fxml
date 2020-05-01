@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Chess.Board.MenuController"
+            fx:id="_root">
+    <top>
+        <HBox>
+            <Button fx:id="_startGame" text="Start" onAction="#onStartGame"/>
+            <Button fx:id="_mainMenu" text="Main Menu" onAction="#onMainMenu"/>
+        </HBox>
+    </top>
+
+</BorderPane>
