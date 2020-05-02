@@ -10,8 +10,8 @@ public class WhiteTile extends aTile{
         super(y, x);
         Rectangle background = new Rectangle();
         background.setFill(Color.WHITE);
-        background.setHeight(30);
-        background.setWidth(30);
+        background.setHeight(60);
+        background.setWidth(60);
         this.getChildren().add(background);
     }
 }

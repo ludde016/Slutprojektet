@@ -7,5 +7,7 @@ public abstract class aPiece {
     public void Piece(int x, int y) {
         cord_x = x;
         cord_y = y;
+
+        // Arbeta med att få en mer fungerande piece class nästa gång
     }
 }

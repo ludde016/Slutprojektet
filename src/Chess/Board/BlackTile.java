@@ -10,8 +10,8 @@ public class BlackTile extends aTile{
         super(y, x);
         Rectangle background = new Rectangle();
         background.setFill(Color.BLACK);
-        background.setHeight(30);
-        background.setWidth(30);
+        background.setHeight(60);
+        background.setWidth(60);
         this.getChildren().add(background);
     }
 }
