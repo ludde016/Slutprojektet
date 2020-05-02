@@ -1,18 +1,30 @@
 package Chess.Board;
 
 import Chess.Pieces.aPiece;
+import javafx.scene.layout.StackPane;
 
-public abstract class aTile {
+public abstract class aTile extends StackPane {
 
-    int _tileCoordinate;
+    private aPiece occupant;
+    private boolean occupancy;
+    protected int cord_y, cord_x;
 
-    aTile (int tileCoordinate) {
-
-        _tileCoordinate = tileCoordinate;
+    aTile (int y, int x) {
+        cord_x = x;
+        cord_y = y;
     }
 
-    public abstract boolean IsTileOccupied(); //yes
+    public aPiece get_occupant(){
+        return occupant;
+    }
 
-    public abstract aPiece GetPiece();
-
+    public void set_occupant(aPiece piece) {
+        if (!occupancy) {
+            occupant = piece;
+            occupancy = true;
+        }
+    }
+    public boolean get_occupancy() {
+        return occupancy;
+    }
 }
