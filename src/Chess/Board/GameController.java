@@ -10,6 +10,8 @@ public class GameController {
     @FXML
     GridPane _board;
 
+    public aTile[][] boardPos = new aTile[8][8];
+
     public void initialize() {
             createBoard();
             placePieces();
@@ -18,10 +20,12 @@ public class GameController {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 if ((col + row) % 2 == 0){
-                    _board.add(new WhiteTile(row,col),row,col);
+                    boardPos[row][col] = new WhiteTile(row,col);
+                    _board.add(boardPos[row][col],row,col);
                 }
                 else {
-                    _board.add(new BlackTile(row,col),row,col);
+                    boardPos[row][col] = new BlackTile(row,col);
+                    _board.add(boardPos[row][col],row,col);
                 }
             }
         }

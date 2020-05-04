@@ -10,7 +10,6 @@ import java.util.List;
 public class Pawn extends aPiece{
     @Override
     public List<Move> calculateLegalMoves(GridPane board) {
-        aTile[][] boardPos = new aTile[8][8];
         return null;
     }
 
