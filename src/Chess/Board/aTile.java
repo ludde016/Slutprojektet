@@ -27,4 +27,7 @@ public abstract class aTile extends StackPane {
     public boolean get_occupancy() {
         return occupancy;
     }
+    public void addPiece (aPiece piece) { // funkar detta?
+        this.getChildren().add(piece);
+    }
 }

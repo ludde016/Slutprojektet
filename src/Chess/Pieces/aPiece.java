@@ -1,13 +1,36 @@
 package Chess.Pieces;
 
-public abstract class aPiece {
+import Chess.Board.GameController;
+import Chess.Board.Move;
+import javafx.fxml.FXML;
+import javafx.scene.Group;
+import javafx.scene.layout.GridPane;
+
+import javax.swing.*;
+import java.util.List;
+
+public abstract class aPiece extends Group {
 
     protected int cord_x, cord_y;
+    protected boolean _white;
 
-    public void Piece(int x, int y) {
+    @FXML
+    GridPane _board;
+
+    public void Piece(int x, int y, boolean white) {
         cord_x = x;
         cord_y = y;
+        _white = white;
+        this.setOnMouseClicked(e->{
+            calculateLegalMoves(_board);
+                }
 
-        // Arbeta med att få en mer fungerande piece class nästa gång
+        );
     }
+
+    public abstract List<Move> calculateLegalMoves(GridPane board);
+
+    public abstract Icon image();
+
+    public abstract boolean isWhite();
 }
