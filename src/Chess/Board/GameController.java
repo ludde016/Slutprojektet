@@ -1,7 +1,9 @@
 package Chess.Board;
 
+import Chess.Pieces.aPiece;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
+import Chess.Pieces.Pawn;
 
 import java.awt.*;
 
@@ -34,7 +36,8 @@ public class GameController {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 if ( row == 1){
-
+                    aPiece temp = new Pawn();
+                   boardPos[row][col].addPiece(temp);
                 }
                 else if (row == 6) {
 
