@@ -1,11 +1,20 @@
 package Chess.Pieces;
 
-import javax.swing.*;
+import Chess.Board.Move;
+import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
+
+import java.util.List;
 
 public class Queen extends aPiece {
 
     @Override
-    public Icon image() {
+    public List<Move> calculateLegalMoves(GridPane board) {
+        return null;
+    }
+
+    @Override
+    public Image pieceImage() {
         return null;
     }
 

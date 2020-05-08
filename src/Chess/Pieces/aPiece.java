@@ -1,12 +1,11 @@
 package Chess.Pieces;
 
-import Chess.Board.GameController;
 import Chess.Board.Move;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
-import javax.swing.*;
 import java.util.List;
 
 public abstract class aPiece extends Group {
@@ -30,7 +29,8 @@ public abstract class aPiece extends Group {
 
     public abstract List<Move> calculateLegalMoves(GridPane board);
 
-    public abstract Icon image();
+
+    public abstract Image pieceImage();
 
     public abstract boolean isWhite();
 }

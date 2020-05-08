@@ -1,5 +1,6 @@
 package Chess.Board;
 
+import Chess.Pieces.Pawn;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,6 +16,7 @@ public class StartGame extends Application {
         primaryStage.setTitle("Chess menu test");
         primaryStage.setScene(new Scene(root,600, 600));
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {

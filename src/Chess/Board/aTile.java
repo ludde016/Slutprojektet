@@ -14,6 +14,8 @@ public abstract class aTile extends StackPane {
         cord_y = y;
     }
 
+    // Drar inte nytta av occupant metoderna än...
+
     public aPiece get_occupant(){
         return occupant;
     }

@@ -35,14 +35,16 @@ public class GameController {
     public void placePieces() {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
-                if ( row == 1){
+                if ( col == 1){
                     aPiece temp = new Pawn();
-                   boardPos[row][col].addPiece(temp);
+                    boardPos[row][col].addPiece(temp);
                 }
-                else if (row == 6) {
+                else if (col == 6) {
 
                 }
             }
         }
     }
+
+
 }
