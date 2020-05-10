@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
 
 import java.util.List;
 
@@ -27,10 +28,13 @@ public abstract class aPiece extends Group {
         );
     }
 
-    public abstract List<Move> calculateLegalMoves(GridPane board);
+    public abstract void calculateLegalMoves(GridPane board);
 
+    public abstract Rectangle createPiece();
 
     public abstract Image pieceImage();
+
+    abstract aPiece getPiece();
 
     public abstract boolean isWhite();
 }

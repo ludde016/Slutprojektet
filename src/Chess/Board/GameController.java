@@ -4,6 +4,7 @@ import Chess.Pieces.aPiece;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 import Chess.Pieces.Pawn;
+import javafx.scene.shape.Rectangle;
 
 import java.awt.*;
 
@@ -12,7 +13,7 @@ public class GameController {
     @FXML
     GridPane _board;
 
-    public aTile[][] boardPos = new aTile[8][8];
+    public static aTile[][] boardPos = new aTile[8][8];
 
     public void initialize() {
             createBoard();
@@ -36,7 +37,7 @@ public class GameController {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 if ( col == 1){
-                    aPiece temp = new Pawn();
+                    aPiece temp = new Pawn(row, col);
                     boardPos[row][col].addPiece(temp);
                 }
                 else if (col == 6) {
@@ -45,6 +46,5 @@ public class GameController {
             }
         }
     }
-
 
 }

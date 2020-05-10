@@ -1,6 +1,8 @@
 package Chess.Pieces;
 
+import Chess.Board.GameController;
 import Chess.Board.Move;
+import Chess.Board.aTile;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.ImagePattern;
@@ -9,20 +11,30 @@ import javafx.scene.shape.Rectangle;
 import java.util.List;
 
 public class Pawn extends aPiece{
+    private int cord_x;
+    private int cord_y;
 
-    public Pawn() {
-        Rectangle background = new Rectangle();
-        Image temp = pieceImage();
-        background.setFill(new ImagePattern(temp));
-        background.setHeight(50);
-        background.setWidth(40);
-        this.getChildren().add(background);
+    public Pawn(int row, int col) {
+        cord_x = row;
+        cord_y = col;
+        this.getChildren().add(createPiece());
+        this.setOnMouseClicked(e->{
+            Move.calculateLegalMoves(getPiece(), cord_x, cord_y);
+                });
     }
 
     @Override
-    public List<Move> calculateLegalMoves(GridPane board) {
-        
-        return null;
+    public void calculateLegalMoves(GridPane board) {
+    }
+
+    @Override
+    public Rectangle createPiece() {
+        Rectangle piece = new Rectangle();
+        Image temp = pieceImage();
+        piece.setFill(new ImagePattern(temp));
+        piece.setHeight(50);
+        piece.setWidth(40);
+        return piece;
     }
 
     @Override
@@ -32,7 +44,12 @@ public class Pawn extends aPiece{
     }
 
     @Override
-    public boolean isWhite() {
+    aPiece getPiece() {
+        return this;
+    }
+
+    @Override
+    public boolean isWhite() { //Används inte än
         return false;
     }
 }

@@ -2,6 +2,7 @@ package Chess.Board;
 
 import Chess.Pieces.aPiece;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Rectangle;
 
 public abstract class aTile extends StackPane {
 
@@ -29,7 +30,13 @@ public abstract class aTile extends StackPane {
     public boolean get_occupancy() {
         return occupancy;
     }
-    public void addPiece (aPiece piece) { // funkar detta?
+
+    public abstract Rectangle createBackground();
+
+    public void addPiece (aPiece piece) {
         this.getChildren().add(piece);
+        set_occupant(piece);
     }
+
+    public abstract void changeColor();
 }
